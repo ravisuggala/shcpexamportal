@@ -1,0 +1,173 @@
+
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS3 Modal Popups | Script Tutorials</title>
+        <link href="CSS/layout.css" rel="stylesheet" type="text/css" />
+        <link href="CSS/modal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+            
+        </header>
+
+        <!-- panel with buttons -->
+        
+        
+        <table align=center border=1>
+<tr>
+<td>Sl.No</td>
+<td>Regdno</td>
+<td>Check</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12B01A1201</td>
+<TD><a href="#login_form" id="login_pop">Register</a></TD>
+</tr>
+<tr>
+<td>11</td>
+<td>12B01A1211</td>
+<TD><a href="#login_form" id="login_pop">Log In</a></TD>
+</tr>
+<tr>
+<td>12</td>
+<td>12B01A1212</td>
+<TD><a href="#login_form" id="login_pop">Log In</a></TD>
+</tr>
+<tr>
+<td>13</td>
+<td>12B01A1213</td>
+<TD><a href="#login_form" id="login_pop">Log In</a></TD>
+</tr>
+<tr>
+<td>14</td>
+<td>12B01A1214</td>
+<TD><input type="checkbox" name="register" value="http://www.srktutorials.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>15</td>
+<td>12B01A1215</td>
+<TD><input type="checkbox" name="register" value="http://www.svecw.edu.in" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>3</td>
+<td>12B01A1203</td>
+<TD><input type="checkbox" name="register" value="http://www.paytm.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>4</td>
+<td>12B01A1204</td>
+<TD><input type="checkbox" name="register" value="http://www.snapdeal.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>5</td>
+<td>12B01A1205</td>
+<TD><input type="checkbox" name="register" value="http://www.ebay.in" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>6</td>
+<td>12B01A1206</td>
+<TD><input type="checkbox" name="register" value="http://www.shoclues.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>7</td>
+<td>12B01A1207</td>
+<TD><input type="checkbox" name="register" value="http://www.facebook.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>8</td>
+<td>12B01A1208</td>
+<TD><input type="checkbox" name="register" value="http://www.in.com" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+<tr>
+<td>9</td>
+<td>12B01A1209</td>
+<TD><input type="checkbox" name="register" value="http://www.erail.in" onclick="if(this.checked){OpenWindow(this.value)}"></input</TD>
+</tr>
+
+
+</table>
+        
+        
+        
+        
+        
+
+        <!-- popup form #1 -->
+        <a href="#x" class="overlay" id="login_form"></a>
+        <div class="popup">
+            <h2>Revaluation Registration</h2>
+            <p>Please Click on subject Title to register</p>
+            <table>
+            <tr>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;English-I</input>
+            </div>
+            </td>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;Mathematics -I</input>
+            </div>
+            </td>
+            </tr>
+             <tr>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;C Programming</input>
+            </div>
+            </td>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;Introduction to Computers and Problem Solving</input>
+            </div>
+            </td>
+            </tr>
+             <tr>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;Data Structures</input>
+            </div>
+            </td>
+            <td>
+            <div>
+                <input type="checkbox" name="register" value="" >&nbsp;&nbsp;&nbsp;Object Oriented Programming using C++</input>
+            </div>
+            </td>
+            </tr>
+            </table>
+            
+            
+            <input type="button" value="Log In" />
+
+            <a class="close" href="#close"></a>
+        </div>
+
+        <!-- popup form #2 -->
+        <a href="#x" class="overlay" id="join_form"></a>
+        <div class="popup">
+            <h2>Sign Up</h2>
+            <p>Please enter your details here</p>
+            <div>
+                <label for="email">Login (Email)</label>
+                <input type="text" id="email" value="" />
+            </div>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" value="" />
+            </div>
+            <div>
+                <label for="firstname">First name</label>
+                <input type="text" id="firstname" value="" />
+            </div>
+            <div>
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" value="" />
+            </div>
+            <input type="button" value="Sign Up" />&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<a href="#login_form" id="login_pop">Log In</a>
+
+            <a class="close" href="#close"></a>
+        </div>
+    </body>
+</html>

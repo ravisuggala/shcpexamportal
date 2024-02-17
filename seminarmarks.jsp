@@ -1,0 +1,235 @@
+
+<head>
+<script language="javascript" src="./JS/FormChek.js"></script>
+<script type="text/javascript" src="./JS/jquery-1.4.2.min.js">  </script>
+
+<script type="text/javascript">
+        $(function() {
+            $('input:text:first').focus();
+            var $inp = $('input:text');
+            $inp.bind('keydown', function(e) {
+                //var key = (e.keyCode ? e.keyCode : e.charCode);
+                var key = e.which;
+                if (key == 13) {
+                	if(!validateMarks(this))
+                	
+                     {
+                    e.preventDefault();
+                    var nxtIdx = $inp.index(this) + 1;
+                    $(":input:text:eq(" + nxtIdx + ")").focus();
+                    }
+                }
+            });
+        });
+        
+            </script>
+
+   
+<script language="javascript">
+
+function validateMarks(field) 
+{
+	var i;
+	 if(!checkString(field,"\" Student Marks \"",false)) 
+            return true;
+	 
+	 
+	 var value=field.value;
+	 var id=field.id;
+	 //var id1=id.substr(0,2);
+	 
+
+	 var patt = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|50)$");
+	 var patt1 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9]|100)$");
+	 
+	 if(id=="dm")
+	  res = patt.test(value);
+	 else if(id=="mp")
+		 res = patt1.test(value);
+		 
+	 if(!res)
+		 {
+		   alert("Invalid Marks");
+		   return true;
+		 }
+	    
+    
+	 return false;
+	   //  document.forms['REGISTER'].submit();
+	
+}
+function formsubmit()
+{
+	document.forms['REGISTER'].submit();
+}
+
+
+</script>
+
+</head>
+<%@ page import = "java.util.*,dao.*" %>
+
+<jsp:useBean id = "miscUtil" scope="session" class="dao.FBSMiscUtilitiesBean" />
+<jsp:useBean id = "fetchData" scope="session" class="dao.FBSFetchDataBean" />
+
+<%@ page import = "dao.User" %>
+
+
+<%
+String header=new String();
+User ur=(User)session.getAttribute("LoginRecord");
+if(ur.getStatus().equals("admin"))
+	header="./adminheader.jsp";
+else if(ur.getStatus().equals("clerk"))
+	header="./mainmenuheader.jsp";
+else if(ur.getStatus().equals("ACE"))
+	header="./aceheader.jsp";
+
+	
+%>
+
+<jsp:include page='<%= header %>' flush="true" />
+
+
+<%
+
+ArrayList marksrows=new ArrayList();
+String status="";
+String title="";
+String type="";
+String examname="";
+if (session.getAttribute("marksinput")!=null)
+{
+     status=(String)session.getAttribute("marksinput");
+
+	 out.println("<center><h6>"+status+"</h6></center>");
+		 
+	 session.removeAttribute("marksinput");
+
+
+}
+else
+{
+String subject=miscUtil.getFromSession(request, response,"subject");
+
+SubjectDB subdb=new SubjectDB();
+examname=miscUtil.getFromSession(request, response,"examname");
+ArrayList mapids=(ArrayList)session.getValue("mapids");
+String sem=session.getValue("sem").toString();
+String degree=session.getValue("degree").toString();
+String branch=session.getValue("branch").toString();
+
+String smname="";
+if(degree.equals("M.Pharmacy")&&(sem.equals("3")||sem.equals("4")))
+	smname="mp";
+else
+	smname="dm";
+title="Sem "+sem+" "+subject+" Marks";
+
+MidExamDB medb=new MidExamDB();
+for(int i=0;i<mapids.size();i++)
+{
+	MarksRow mr=new MarksRow();
+	Student st=(Student)mapids.get(i);
+	String mapid=st.getMapid();
+	//System.out.println(mapid);
+	MidExam attempted=medb.findMapidinMPExternal(mapid,examname);
+	String regdno=st.getRegdno();
+	String sname=st.getName();
+	String dmbox=new String();
+	String atbox=new String();
+	if(!attempted.isMidExisted())
+	{
+		  
+		
+			 dmbox="<input id="+smname+" type=text maxlength=2 size=3 name="+mapid+"-dm"+"></input>";
+			 atbox="<input type=hidden size=3 name=h"+mapid+" value=false></input>";	 
+		 
+		 
+		 
+	}
+	else
+	{
+		
+			 dmbox="<input id="+smname+" type=text size=3 maxlength=2 name="+mapid+"-dm"+" value="+attempted.getDm()+"></input>";
+			 atbox="<input type=hidden size=3 name=h"+mapid+" value=true></input>";
+		 
+		
+	}
+	
+	mr.setSlno((i+1)+"");
+	mr.setName(sname);
+	mr.setRegdno(regdno);
+	mr.setDmbox(dmbox);
+	mr.setHidden(atbox);
+	
+	marksrows.add(i, mr);
+}
+}
+%>
+
+
+<html>
+	<head>
+		<title>SVCP - Examination Portal - Mid Examinations</title>
+		
+	</head>
+	<body>
+		  <div id="centre">
+			    <center><h3><%=title %></h3></center>
+			    
+			    <% 
+			    if(marksrows.size()>0)
+			    {
+			    	
+			    %>
+			    <CENTER>
+						<TABLE BORDER="1" CELLPADDING="2" CELLSPACING="2" WIDTH="300">
+							<FORM NAME = REGISTER METHOD = POST ACTION = "./ActionServlet" >
+							
+							
+							<TR>
+							    <TD COLSPAN="6" ALIGN="center"><h6><b> Student List</b></h6></TD>
+							</TR>
+							<tr>
+							<th><font size=1>Sl.No</font>
+							<th nowrap><font size=1>Name of the Student</font>
+							<th><font size=1>Regd.No</font>
+							<th nowrap><font size=1><%=type %><br>Marks</font>
+							
+							</tr>
+							<% 
+							for(int i=0;i<marksrows.size();i++)
+							{
+								MarksRow mr=(MarksRow)marksrows.get(i);					
+							%>
+							<tr>
+							<td align=right><%=mr.getSlno() %>
+							<td NOWRAP><%=mr.getName() %>
+							<td align=center><%=mr.getRegdno() %>
+							<td align=center><%=mr.getDmbox() %>
+							<%=mr.getHidden() %>
+							</tr>
+							<%} %>
+							<tr>
+							<TD colspan=6 align="center">
+							
+							<INPUT TYPE=HIDDEN NAME="option" VALUE = "mpseminarmarks">
+							<input id="btnSubmit" type="button" value="Submit" onclick="formsubmit()"></input></TD>
+							
+													</FORM>
+						</TABLE>
+					    </CENTER>		
+	 <%} %>	  
+					   
+					   
+					   
+		  </div>
+		<div id="pied"></div>
+	</div>
+	<br></br>
+	<br></br>
+	<br></br>
+	
+	</body>
+</html>

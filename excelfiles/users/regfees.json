@@ -1,0 +1,22 @@
+{
+	"fees":{
+			"M.Pharmacy-1":"2600",
+			"M.Pharmacy-2":"2600",
+			"M.Pharmacy-3":"2600",
+			"M.Pharmacy-4":"2600",
+			"B.Pharmacy-1":"2100",
+			"B.Pharmacy-2":"2100",
+			"B.Pharmacy-3":"2100",
+			"B.Pharmacy-4":"2100",
+			"B.Pharmacy-5":"2100",
+			"B.Pharmacy-6":"2100",
+			"B.Pharmacy-7":"2100",
+			"B.Pharmacy-8":"2100",
+			"Pharm.D-1":"3100",
+			"Pharm.D-2":"3100",
+			"Pharm.D-3":"3100",
+			"Pharm.D-4":"3100",
+			"Pharm.D-5":"3100",
+			"Pharm.D-6":"3100"
+    	}
+ }   				
