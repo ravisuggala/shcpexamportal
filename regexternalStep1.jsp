@@ -265,7 +265,7 @@ function populateSecValues(obj){
         						</select> 
         						</td></tr>
 							
-							<TR>
+							<!--  <TR>
 								<TD  WIDTH="20%" ALIGN="right" nowrap>Marks Entry </TD>
 								<td WIDTH="10%" ALIGN="left">
 								<select name="entry">
@@ -276,7 +276,7 @@ function populateSecValues(obj){
 								
 								
 								</select>
-								</td></tr>
+								</td></tr> -->
 														
 							
 							<TR>
