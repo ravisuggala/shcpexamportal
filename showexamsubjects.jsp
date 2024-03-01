@@ -49,7 +49,7 @@ else
 			subjectsList=mdb.getMappedAllSubjects(branch, sem, ee.getReg(), ay);
 		else if(ee.getType().equals("SUPPLEMENTARY"))
 			subjectsList=mdb.getMappedAllSupplySubjects(branch, sem, ee.getReg(), ay);
-	    timetable=eedb.isTimetableSet(code,branch);
+	    //timetable=eedb.isTimetableSet(code,branch);
 		
 		//session.putValue("maplist", maplist);
 

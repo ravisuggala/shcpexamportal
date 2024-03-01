@@ -44,7 +44,7 @@ ArrayList subjects=new ArrayList();
 MidExamDB medb=new MidExamDB();
 LinkedHashMap marksdata=new LinkedHashMap();
 if(midno.equals("mid1")||midno.equals("mid2")||midno.equals("remid")||midno.equals("totda")||midno.equals("mid3")){
-	 subjects=new SubjectDB().getAllMappedSubjectsInOrderNoLabs(degree,branch, sem, reg, section, ay);
+	 subjects=new SubjectDB().getAllMappedSubjectsInOrder(degree,branch, sem, reg, section, ay);
 	marksdata=medb.getAllMidMarks(degree,ay, branch, reg, sem,  midno,section);
 }
 	// marksdata=medb.getElectiveMidMarks(ay, branch, reg, sem,  midno,section);

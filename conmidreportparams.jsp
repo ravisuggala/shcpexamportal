@@ -126,8 +126,8 @@ ArrayList regs=new StudentDB().getRegulations();
 								<option value="mid2">II Mid </option>
 								<option value="mid3">III Mid </option>
 								<option value="remid">ReMid </option>
-								<option value="totda">Daily Assessments </option>
-								<!--  <option value="labfinal">Lab Marks </option>-->
+								<!--<option value="totda">Daily Assessments </option>
+								 <option value="labfinal">Lab Marks </option>-->
 								<option value="total">Final Marks </option>
 								
 								</select>

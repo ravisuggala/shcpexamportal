@@ -200,6 +200,7 @@ function fesubjectselect(elecat)
 								<option value="mid2">II Mid </option>
 								<option value="mid3">III Mid </option>
 								<option value="remid">Re Mid </option>
+								<option value="direct">Direct </option>
 							</select>
 								</td>
 							</tr>

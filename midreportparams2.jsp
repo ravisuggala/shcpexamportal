@@ -17,6 +17,7 @@ String cat=new String();
 String elecat="";
 String reg="";
 String subject="";
+String midno="";
 
 	//System.out.println("in else");
 
@@ -30,6 +31,8 @@ String subject="";
  reg=miscUtil.noNull(request.getParameter("reg"));
  elecat=miscUtil.noNull(request.getParameter("elecat"));
  subject=miscUtil.noNull(request.getParameter("subject"));
+ midno=miscUtil.noNull(request.getParameter("midno"));
+ 
  
  boolean validsec=false;
 	 validsec=new StudentDB().isValidSection(degree,branch,sem,section);
@@ -54,8 +57,18 @@ session.putValue("elecat", elecat);
 session.putValue("subject", subject);
 session.putValue("reg",reg);
 session.putValue("cat",cat);
+session.putValue("midno",midno);
 if(degree.equals("Pharm.D"))
 response.sendRedirect("./pddisplaygrandmidmarks.jsp");
+else if(cat.equals("au"))
+{
+	MidExamDB medb=new MidExamDB();
+	ArrayList slist=medb.getAuditSubjectsMarks(branch, sem,ay,section);
+	Subject ausub=new SubjectDB().getNonCreditSubject(branch, sem, reg);
+	session.putValue("aumarks", slist);
+	session.putValue("ausubject", ausub);
+	response.sendRedirect("./displayaumarks.jsp");
+}
 else
 	response.sendRedirect("./displaygrandmidmarks.jsp");
 

@@ -27,6 +27,7 @@ String reg=session.getValue("reg").toString();
 String sem=session.getValue("sem").toString();
 String section=session.getValue("section").toString();
 String degree=session.getValue("degree").toString();
+String midno=session.getValue("midno").toString();
 
 //System.out.println(ay+branch+reg+sem+subject+section+degree);
 String subjtitle=(new SubjectDB().getSubjectTitle(subject, reg))+" ("+subject+")";
@@ -34,7 +35,7 @@ Subject subdetails=new SubjectDB().getSubject(subject, reg);
 MidExamDB medb=new MidExamDB();
 ArrayList marksdata=new ArrayList();
 		
-	marksdata=medb.getGrandMidMarks(ay, branch, reg, sem, subject,section,degree);
+	marksdata=medb.getSubjectMidMarks(ay, branch, reg, sem, subject,section,degree,midno);
 
 session.putValue("marksdata", marksdata);
  
@@ -44,6 +45,8 @@ session.putValue("title", title);
 ArrayList marksdataprint=new ArrayList();
 String br=branch;
 branch=branch+"-"+section;
+String totmarks="",dm="",actvts="",att="",asst="";
+
 
 %>
 
@@ -113,29 +116,44 @@ else if(ur.getStatus().equals("ACE"))
 							<th><font size=1>Sl.No</font>
 							<th nowrap> <font size=1>Name of the Student</font>
 							<th><font size=1>Regd.No</font>
-							<th nowrap><font size=1 >I Mid</font>
-							<th nowrap><font size=1 >II Mid</font>
-							<th><font size=1>Re Mid</font>
-							<th><font size=1 nowrap>Scaled to <%=subdetails.getSemaxmarks() %></font>
-							<th align="center"><font size=1>Daily Assessment</font>
-							<th><font size=1>Final Marks</font>
+							<th nowrap><font size=1 >Descriptive<br>(<%=subdetails.getMidconductmarks() %>)</font>
+							<th nowrap><font size=1 >Attendance<br>(<%=subdetails.getAttmax() %>)</font>
+							<th><font size=1>Academic Activity<br>(<%=subdetails.getTestmax() %>) </font>
+							<th><font size=1 nowrap>Student-Teacher Interaction<br>(<%=subdetails.getAssmax() %>)</font>
+							<th><font size=1>Final Marks<br>(<%=subdetails.getMidmax() %>)</font>
 							
 							
 							<% 
 							for(int i=0;i<marksdata.size();i++)
 							{
-								MidExam mr=(MidExam)marksdata.get(i);					
+								MidExam mr=(MidExam)marksdata.get(i);	
+								if(midno.equals("mid1")){
+									totmarks=mr.getValue("mid1");
+									dm=mr.getValue("dm1");
+									att=mr.getValue("att");
+									actvts=mr.getValue("actvts");
+									asst=mr.getValue("asst");
+									
+								}
+								else if(midno.equals("mid2")){
+									totmarks=mr.getValue("mid2");
+									dm=mr.getValue("dm2");
+									att=mr.getValue("att2");
+									actvts=mr.getValue("actvts2");
+									asst=mr.getValue("asst2");
+									
+								}
 							%>
 							<tr>
 							<td align=right><%=i+1 %>
 							<td nowrap><%=new StudentDB().getStudentName(mr.getRegdno()) %>
 							<td align=center><%=mr.getRegdno() %>
-							<td align=center><%=mr.getValue("mid1") %>
-							<td align=center><%=mr.getValue("mid2") %>
-							<td align=center><%=mr.getValue("remid") %>
-							<td align=center><%=mr.getValue("avg") %>
-							<td align=center><%=mr.getDa() %>
-							<td align=center><%=mr.getTot() %>
+							<td align=center><%= dm%>
+							<td align=center><%=att %>
+							<td align=center><%=actvts %>
+							<td align=center><%=asst %>
+							<td align=center><%=totmarks %>
+					
 							
 							<%} %>
 							<tr>
@@ -144,7 +162,7 @@ else if(ur.getStatus().equals("ACE"))
 							
 								<form name=xlform METHOD = POST ACTION = "./ActionServlet" >
 						  <input type="button" value="Print" onclick="printtable()"></input> &nbsp;&nbsp;
-						 <input id="btnSubmit" type="button" value="Export to Excel" onClick=selectOption("xlgrandmidmarks") ></input>
+						<!--   <input id="btnSubmit" type="button" value="Export to Excel" onClick=selectOption("xlgrandmidmarks") ></input>-->
 						  
 
 						  </form>

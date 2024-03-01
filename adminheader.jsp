@@ -133,7 +133,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 	<li> <a href="#" > Subjects</a>
 	<ul>
 		<li> <a href="./importsubjects.jsp" > General Subjects</a></li>
-		<!--  <li> <a href="./importncsubjects.jsp" > Non-Credit Subjects</a></li>-->
+		  <li> <a href="./importncsubjects.jsp" > Non-Credit Subjects</a></li>
 		</ul>
 	
 	</li>
@@ -141,7 +141,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 	
 	<li> <a href="#" > Subjects Mapping</a>
 		<ul>
-		<li> <a href="#" onClick=selectOption('mFapsub')> Common Subjects</a></li>
+		<li> <a href="#" onClick=selectOption('mapsub')> Common Subjects</a></li>
 		<li> <a href="#" onClick=selectOption('mapelective')> Elective Subjects</a></li>
 		<li> <a href="./bp8mapelective1.jsp" > VIII Sem Elective Subjects</a></li>
 		<li> <a href="./importmappings1.jsp"> Upload Mapping Sheet</a></li>
@@ -202,6 +202,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 <ul>
 
 				<li> <a href="#" onClick=selectOption("mid")>Mid Marks</a></li>
+				<li> <a href="./auditcrsMarksStep1.jsp">Audit Course Marks</a></li>
 				<!--<li> <a href="./attendancemarks1.jsp">Attendance Marks</a></li>
 				<li> <a href="./attendance1.jsp">Attended Classes</a></li>
 				<li> <a href="./acaactmarks1.jsp">Academic Activity Marks</a></li>

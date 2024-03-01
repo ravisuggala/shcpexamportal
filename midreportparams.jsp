@@ -192,7 +192,23 @@ function subjectselect(elecat)
 											
 										}
 									%>
-									</select>        						</td></tr>
+									</select>        						
+									</td></tr>
+									
+									<TR>
+								<TD  WIDTH="20%" ALIGN="right" nowrap>Mid Number </TD>
+								<td WIDTH="10%" ALIGN="left">
+								<select name="midno">
+								<option value=""></option>
+								<option value="mid1">I Mid </option>
+								<option value="mid2">II Mid </option>
+								<option value="mid3">III Mid </option>
+								<option value="remid">Re Mid </option>
+								<option value="direct">Direct </option>
+							</select>
+								</td>
+								
+							</tr>
 						
 							
 							<TR>
@@ -202,6 +218,7 @@ function subjectselect(elecat)
 								<option value=""></option>
 								<option value="common">Common</option>
 								<option value="elective">Elective</option>
+								<option value="au">Audit Course</option>
 								
 								</select>
 								
