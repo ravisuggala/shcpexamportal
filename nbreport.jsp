@@ -46,21 +46,21 @@ subjtitles=sdb.getAllExamSubjects(subjtitles,regdsubjects);
 
  title=miscUtil.getYearDescription(ee.getSem(),ee.getDegree());
 if(ee.getType().equals("REGULAR"))
-title=title+" Regular Examination Results";
+title=title+" Regular Examination Results -"+ee.getMonth();
 else if(ee.getType().equals("REVALUATION"))
-title=title+" Main Revaluation Results";
+title=title+" Main Revaluation Results -"+ee.getMonth();
 else if(ee.getType().equals("SUPPLEMENTARY"))
-title=title+" Supplementary Examination Results";
+title=title+" Supplementary Examination Results -"+ee.getMonth();
 else if(ee.getType().equals("SUPPLY REVALUATION"))
-title=title+" Supply Revaluation Examination Results";
+title=title+" Supply Revaluation Examination Results -"+ee.getMonth();
 else if(ee.getType().equals("SPECIAL THEORY"))
-title=title+" Special Theory Examination Results";
+title=title+" Special Theory Examination Results -"+ee.getMonth();
 
 
 
 
 
-int colspan=subjtitles.size()+5;
+int colspan=subjtitles.size()+4;
 %>
 
 <%@ page import = "dao.User" %>
@@ -131,7 +131,7 @@ else if(ur.getStatus().equals("ACE"))
 							}
 							%>
 							<th> <font size=1>SGPA</font>
-							<th><font size=1>CGPA</font>
+							<!-- <th><font size=1>CGPA</font> -->
 							
 							</tr>
 							
@@ -158,14 +158,24 @@ else if(ur.getStatus().equals("ACE"))
 									String sub=subjtitles.get(j).toString();
 									String marks=miscUtil.noNull((String)stresults.get(sub));
 									String grade=miscUtil.parseMarks(marks, 4);
+									String intr=miscUtil.parseMarks(marks, 1);
+									String extr=miscUtil.parseMarks(marks, 2);
+									String tot=miscUtil.parseMarks(marks, 3);
+									String cr=miscUtil.parseMarks(marks, 6);
+									String result="";
+									if(grade.equals("F"))
+										result="FAIL";
+									else
+										result="PASS";
+									String sresult=intr+"-"+extr+"-"+tot+"-"+grade+"-"+cr+"-"+result;
 									
 							%>
-							<td align=center><%=grade %>
+							<td align=center><%=sresult %>
 							<%
 								}%>
 								
 							<td align=center><%=sgpa %>
-							<td align=center><%=cgpa %>
+							<!-- <td align=center><%=cgpa %> -->
 							
 							<% }%> 
 							
