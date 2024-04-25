@@ -26,7 +26,7 @@ ArrayList regs=new StudentDB().getRegulations();
 
 <html>
 	<head>
-		<title>SVCP--Examination Portal - Lab Examinations</title>
+		<title>SHCP--Examination Portal - Lab Examinations</title>
 
 <script>
 function toggle(selectObj) {
@@ -69,7 +69,7 @@ function toggle(selectObj) {
 					    <center><h1>Lab Internal Examinations Marks Entry</h1></center>
 					    <CENTER>
 					    	<TABLE BORDER="1" CELLPADDING="2" CELLSPACING="2" WIDTH="290">
-							<FORM NAME = REGISTER METHOD = POST ACTION = "./labStep2f.jsp">
+							<FORM NAME = REGISTER METHOD = POST ACTION = "./labStep2faculty.jsp">
 							<INPUT TYPE=HIDDEN NAME="hiddenActionType" VALUE = "labstep1">
 							<INPUT TYPE=HIDDEN NAME="faculty" VALUE = '<%=ur.getUname()%>' id="faculty">
 							
@@ -171,7 +171,7 @@ function toggle(selectObj) {
 								<option value=""></option>
 								<option value="mid1">I Mid </option>
 								<option value="mid2">II Mid </option>
-								<option value="ca">Continues Assessment </option>
+								<!--  <option value="ca">Continues Assessment </option>-->
 								
 							</select>
 								</td>

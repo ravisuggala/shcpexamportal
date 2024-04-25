@@ -207,7 +207,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<li> <a href="./attendance1.jsp">Attended Classes</a></li>
 				<li> <a href="./acaactmarks1.jsp">Academic Activity Marks</a></li>
 				<li> <a href="./assmarks1.jsp">Assignment Marks</a></li>
-				  <li> <a href="./LabStep1.jsp">Lab Marks</a></li>
+				<li> <a href="./LabStep1.jsp">Lab Marks</a></li>
 				<li> <a href="./ps3Step1.jsp">Practice School-III Marks</a></li>-->
 				<li><a href="./freezmarksparams.jsp" > Freez Marks</a>
 				
@@ -219,10 +219,10 @@ User usr=(User)session.getAttribute("LoginRecord");
 <li> <a href="#" > M.Pharmacy</a>
 <ul>
 
-	<li> <a href="./midStep1f.jsp"> Mid Marks</a></li>
+	<li> <a href="./midStep1.jsp"> Mid Marks</a></li>
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> -->
-	<li> <a href="./attendance1f.jsp"> Attendance</a></li>
-	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
+	<!--  <li> <a href="./attendance1f.jsp"> Attendance</a></li>
+	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>-->
 	
 	
 	

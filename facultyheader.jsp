@@ -155,11 +155,12 @@ User usr=(User)session.getAttribute("LoginRecord");
 <ul>
 
 	<li> <a href="./midStep1f.jsp"> Mid Marks</a></li>
+	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> 
 	<li> <a href="./attendance1f.jsp"> Attendance</a></li>
 	<li> <a href="./acaactmarks1f.jsp"> Academic Activities</a></li>
 	<li> <a href="./assmarks1f.jsp"> Assignment Marks</a></li>
-	  <li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
+	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
 	<li> <a href="./frezass1f.jsp"> Freez Continues Assessment Marks</a></li>-->
 	
 	
@@ -170,8 +171,8 @@ User usr=(User)session.getAttribute("LoginRecord");
 
 	<li> <a href="./midStep1f.jsp"> Mid Marks</a></li>
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> -->
-	<li> <a href="./attendance1f.jsp"> Attendance</a></li>
-	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
+	<!--<li> <a href="./attendance1f.jsp"> Attendance</a></li>
+	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>-->
 	
 	
 	

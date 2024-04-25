@@ -206,7 +206,7 @@ for(int i=0;i<mapids.size();i++)
 
 <html>
 	<head>
-		<title>SVCP - Examination Portal - Lab Examinations</title>
+		<title>SHCP - Examination Portal - Lab Examinations</title>
 		
 	</head>
 	<body>

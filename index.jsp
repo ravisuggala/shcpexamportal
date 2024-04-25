@@ -30,7 +30,7 @@
 	</head>
 	<body>
 	<div id="conteneur">
-		  <div id="header"><img src="./imgs/one.jpg" width=100%  height=200 align=center></div>
+		   <div id="header"><img src="./imgs/one.jpg" width=100%  height=200 align=center></div>
 		  
 		  
 		  	

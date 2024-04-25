@@ -99,7 +99,7 @@ ArrayList students=new ArrayList();
 	
 <jsp:include page='<%= header %>' flush="true" />
 	<head>
-		<title>SVCP--Examination Portal - Mid Examinations</title>
+		<title>SHCP--Examination Portal - Mid Examinations</title>
 		<script language="javascript" src="./JS/functions.js"></script>
 		<script language="javascript" src="./JS/datetimepicker.js"></script>
 	</head>

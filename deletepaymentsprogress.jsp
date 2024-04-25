@@ -20,9 +20,11 @@ FBSMiscUtilitiesBean utility=new FBSMiscUtilitiesBean();
 
 String degree=utility.noNull(request.getParameter("degree"));
 String type=utility.noNull(request.getParameter("type"));
+String sem=utility.noNull(request.getParameter("sem"));
 
 session.setAttribute("degree", degree);
 session.setAttribute("type", type);
+session.setAttribute("sem", sem);
 %>
 
 <jsp:include page='<%= header %>' flush="true" />
