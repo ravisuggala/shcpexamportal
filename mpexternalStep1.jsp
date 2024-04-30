@@ -26,7 +26,7 @@ ArrayList regs=new StudentDB().getRegulations();
 
 <html>
 	<head>
-		<title>SVCP--Examination Portal - External Examinations</title>
+		<title>SHCP--Examination Portal - External Examinations</title>
 
 <script>
 function toggle(selectObj) {
@@ -269,8 +269,8 @@ var type=document.getElementById("type").value;
 								<td WIDTH="10%" ALIGN="left">
 								<select name="ev">
 								<option value=""></option>
-								<option value="ev12">EV-I & EV-II</option>
-								<option value="ev3">EV-III</option>
+								<option value="ev12">EV-I </option>
+								
 								
 								</select>
 								</td></tr>

@@ -104,10 +104,7 @@ else
 }
 if(evtype.equals("ev12"))
 	students=eedb.getRegisteredStudents(examname, branch,subject);
-else
-	students=eedb.getEV3RegisteredStudents(examname, branch,subject);
-	session.putValue("students", students);
-	
+
 
 	
 	boolean freez=false;

@@ -10,16 +10,27 @@
             var $inp = $('input:text');
             
             $inp.bind('keydown', function(e) {
-                //var key = (e.keyCode ? e.keyCode : e.charCode);
+            	 //var key = (e.keyCode ? e.keyCode : e.charCode);
                 var key = e.which;
+                if (key === 9) {
+                    e.preventDefault();
+                    $(this).focus();
+                }
                 if (key == 13) {
                 	if(!validateMarks(this))
                 	
                      {
                     e.preventDefault();
-                    var nxtIdx = $inp.index(this) + 2;
+                    var nxtIdx = $inp.index(this) + 1;
+                    $(":input:text:eq(" + nxtIdx + ")").select();
                     $(":input:text:eq(" + nxtIdx + ")").focus();
+                    
                     }
+                	else{
+                		e.preventDefault();
+                		var currentTextboxValue = $(this).val();
+                		$(this).select();
+                	}
                 }
             });
         });
@@ -29,15 +40,34 @@
         
         
             </script>
-
    
 <script language="javascript">
 
+function generateRegex(maxMarks) {
+	  // Build the regex pattern dynamically
+	  var regexPattern = '^(a|A';
+	  
+	  // Allow any digit from 0 to the maximum marks
+	  
+	  
+	  // Allow double-digit numbers less than or equal to the maximum marks
+	  for (var i = 0; i <= maxMarks; i += 1) {
+	    regexPattern += '|' + i.toString();
+	  }
+	  
+	  // Close the regex pattern
+	  regexPattern += ')$';
+
+	  // Create a RegExp object with the generated pattern
+	  const regex = new RegExp(regexPattern);
+
+	  return regex;
+	}
 function validateMarks(field) 
 {
 	var i;
 	 if(!checkString(field,"\" Student Marks \"",false)) 
-            return true;
+          return true;
 	 
 	 
 	 var value=field.value;
@@ -47,23 +77,46 @@ function validateMarks(field)
 	 
 	 var patt1 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|70)$");
 	 
-	
+	 var patt2 = new RegExp("^(a|A|[0-9]|1[0-9]|20)$");
+	 var patt4 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|40)$");
+	 
+	 var max=document.getElementById('maxmarks').value;
 	 
 	 if(id1=="dm")
-	 	res = patt1.test(value);
-	 else if(id1=="qm")
-		 res=patt1.test(value);
+	 {
+		// var regex = /^(\d+(\.\d{1,2})?|[Aa])$/;
+		 var regex = generateRegex(max);
+		 if (regex.test(value)) {
+		 	//res=asspatt.test(value);
+		 	if(value.toUpperCase()=="A") res=true;
+		 	else
+		 		{
+		 		var floatValue = parseInt(value);
+			 	if (floatValue <= max) {
+			 		res=true;
+			 	}
+			 	else
+			 		res=false;
+		 		}
+		 	
+		 }
+		 else
+			 res=false;
+		 	
+			 
+	 }
+	 
 	 if(!res)
 		 {
 		   alert("Invalid Marks");
 		   return true;
 		 }
 	    
-    
+  
 	 return false;
 	 
 
-   //  document.forms['REGISTER'].submit();
+ //  document.forms['REGISTER'].submit();
 	
 }
 
@@ -123,7 +176,7 @@ ArrayList marksrows=new ArrayList();
 String status="";
 String title="";
 String subject=new String();
-
+String maxmarks=miscUtil.getFromSession(request, response,"maxmarks");
 String examname="";
 if (session.getAttribute("marksinput")!=null)
 {
@@ -167,14 +220,14 @@ for(int i=0;i<mapids.size();i++)
 	if(attempted.isMidExisted())
 	{
 		dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-dm-"+examname+" value="+attempted.getDm()+"></input>";
-		qmbox="<input id=qm"+i+" type=text size=3 maxlength=5 name="+mapid+"-qm-"+examname+" value="+attempted.getQm()+"></input>";
+		qmbox="<input id=qm"+i+" type=hidden size=3 maxlength=5 name="+mapid+"-qm-"+examname+" value="+attempted.getQm()+"></input>";
 		atbox="<input type=hidden size=3 name=h"+mapid+"-"+examname+" value=true></input>";
 			 
 	}
 	else
 	{
 	     dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-dm-"+examname+"></input>";
-	     qmbox="<input id=qm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-qm-"+examname+"></input>";
+	     qmbox="<input id=qm"+i+"  type=hidden maxlength=5 size=3 name="+mapid+"-qm-"+examname+"></input>";
 		 atbox="<input type=hidden size=3 name=h"+mapid+"-"+examname+" value=false></input>";
 			
 		
@@ -210,7 +263,7 @@ for(int i=0;i<mapids.size();i++)
 						<TABLE BORDER="1" CELLPADDING="2" CELLSPACING="2" WIDTH="300">
 							<FORM NAME = REGISTER METHOD = POST ACTION = "./ActionServlet" >
 							
-							
+							<input type=hidden id="maxmarks" value='<%=maxmarks %>'></input>
 							<TR>
 							    <TD COLSPAN="6" ALIGN="center"><h6><b>External Marks Entry</b></h6></TD>
 							</TR>
@@ -218,8 +271,8 @@ for(int i=0;i<mapids.size();i++)
 							<th><font size=1>Sl.No</font>
 							<th nowrap><font size=1>Name of the Student</font>
 							<th><font size=1>Regd.No</font>
-							<th nowrap><font size=1>Marks(70)</font>
-							<th nowrap><font size=1>Marks(70)</font>
+							<th nowrap><font size=1>Marks<br>(<%=maxmarks %>)</font>
+							
 							
 							<%
 							
@@ -232,7 +285,7 @@ for(int i=0;i<mapids.size();i++)
 							<td NOWRAP><%=mr.getName() %>
 							<td align=center><%=mr.getRegdno() %>
 							<td align=center><%=mr.getDmbox() %>
-							<td align=center><%=mr.getQmbox() %>
+							
 							
 							
 							<%=mr.getHidden() %>

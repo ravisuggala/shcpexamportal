@@ -206,9 +206,9 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<!--<li> <a href="./attendancemarks1.jsp">Attendance Marks</a></li>
 				<li> <a href="./attendance1.jsp">Attended Classes</a></li>
 				<li> <a href="./acaactmarks1.jsp">Academic Activity Marks</a></li>
-				<li> <a href="./assmarks1.jsp">Assignment Marks</a></li>
+				<li> <a href="./assmarks1.jsp">Assignment Marks</a></li>-->
 				<li> <a href="./LabStep1.jsp">Lab Marks</a></li>
-				<li> <a href="./ps3Step1.jsp">Practice School-III Marks</a></li>-->
+				<li> <a href="./ps3Step1.jsp">Practice School-III Marks</a></li>
 				<li><a href="./freezmarksparams.jsp" > Freez Marks</a>
 				
 				</li>
@@ -301,7 +301,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<ul>
 				<li> <a href="./externalmarksparam1.jsp">Upload Marks</a></li>
 					<li> <a href="./mpexternalStep1.jsp">Theory</a></li>
-					<li> <a href="./mpexternallabStep1.jsp">Lab</a></li>
+					<!-- <li> <a href="./mpexternallabStep1.jsp">Lab</a></li> -->
 					<li> <a href="./mpseminarStep1.jsp">Seminar/Colloquium</a></li>
 					<li> <a href="./mpvivaStep1.jsp">Viva Marks</a></li>
 					<li> <a href="./mp50marksStep1.jsp">50 Marks Input</a></li>
