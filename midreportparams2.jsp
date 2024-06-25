@@ -69,6 +69,10 @@ else if(cat.equals("au"))
 	session.putValue("ausubject", ausub);
 	response.sendRedirect("./displayaumarks.jsp");
 }
+else if(cat.equals("all"))
+{
+	response.sendRedirect("./allfinalmarks.jsp");
+}
 else
 	response.sendRedirect("./displaygrandmidmarks.jsp");
 

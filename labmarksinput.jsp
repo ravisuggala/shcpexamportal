@@ -327,10 +327,10 @@ for(int i=0;i<mapids.size();i++)
 			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value=-1></input>";
 		else
 		{
-			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value="+attempted.getValue(midno)+"></input>";
+			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
 			attbox="<input id=at"+i+" type=text size=5 maxlength=5 name="+mapid+"-att value="+attempted.getValue(attempted.getAttno()) +"></input>";
 			actvtsbox="<input id=ac"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts value="+attempted.getValue(attempted.getActvtsno())+"></input>";
-			assbox="<input id=as"+i+" type=text size=5 maxlength=5 name="+mapid+"-asst value=0></input>";
+			assbox="<input id=as"+i+" type=hidden size=5 maxlength=5 name="+mapid+"-asst value=0></input>";
 		}
 			
 		atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=true></input>";
@@ -344,7 +344,7 @@ for(int i=0;i<mapids.size();i++)
 				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+"></input>";
 				attbox="<input id=attd"+i+" type=text size=5 maxlength=5 name="+mapid+"-att></input>";
 				actvtsbox="<input id=actvts"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts></input>";
-				assbox="<input id=asst"+i+" type=text size=5 value=0 maxlength=5 name="+mapid+"-asst></input>";
+				assbox="<input id=asst"+i+" type=hidden size=5 value=0 maxlength=5 name="+mapid+"-asst></input>";
 			}
 				
 		 atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=false></input>";
@@ -395,9 +395,9 @@ for(int i=0;i<mapids.size();i++)
 							<th nowrap><font size=1>Name of the Student</font>
 							<th><font size=1>Regd.No</font>
 							<th><font size=1>Practical Marks<br>(<%=midmax %>)</font>
-							<th><font size=1>Regularity Marks<br>(<%=attmax %>)</font>
+							<th><font size=1>Attendance Marks<br>(<%=attmax %>)</font>
 							<th><font size=1>Record Marks<br>(<%=actvtsmax %>)</font>
-							<th><font size=1>Viva Marks<br>(<%=assmax %>)</font>
+							<!-- <th><font size=1>Viva Marks<br>(<%=assmax %>)</font> -->
 							<th><font size=1>&nbsp;&nbsp;&nbsp;</font>
 							
 							<%

@@ -268,10 +268,8 @@ var type=document.getElementById("type").value;
 								<TD  WIDTH="20%" ALIGN="right" nowrap>Evaluation Type: </TD>
 								<td WIDTH="10%" ALIGN="left">
 								<select name="ev">
-								<option value=""></option>
-								<option value="ev12">EV-I </option>
-								
-								
+								<option value="numeric">Numeric</option>
+								<option value="##">## </option>
 								</select>
 								</td></tr>
 														

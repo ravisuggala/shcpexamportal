@@ -138,19 +138,24 @@ function validateMarks(field)
 
 function formsubmit()
 {
-    var form1 = document.forms['REGISTER'];
-    var flag=0;
-    //formName being the name of the form
-    for (i = 0; i < form1 .length; i++) {
-    inp= form1 .elements[i];
-    if (inp.value.length == 0){
-    	flag=1;
-    alert("Please enter marks in all text boxes");
-    break;
+	var inputs = document.querySelectorAll('input[type="text"]');
+    var isValid = true;
+    var numberRegex = /^-?\d+(\.\d+)?$/;
+
+    inputs.forEach(function(input) {
+        if (!input.value.trim().match(numberRegex)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        alert("Please enter numbers in all text boxes.");
+    } else {
+    	document.forms['REGISTER'].submit();
     }
-    }
-    if(flag==0)
-	document.forms['REGISTER'].submit();
+    
+    
+    
 }
 
 </script>
@@ -195,8 +200,8 @@ String title="";
 String subject=new String();
 String type=new String();
 String midmax=miscUtil.getFromSession(request, response,"midmax");
-String quizmax=miscUtil.getFromSession(request, response,"quizmax");
-String assmax=miscUtil.getFromSession(request, response,"quizmax");
+String quizmax=miscUtil.getFromSession(request, response,"attmax");
+String assmax=miscUtil.getFromSession(request, response,"assmax");
 if (session.getAttribute("marksinput")!=null)
 {
      status=(String)session.getAttribute("marksinput");

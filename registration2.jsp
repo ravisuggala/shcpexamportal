@@ -24,8 +24,10 @@ session.setAttribute("sem",sem);
 String type=session.getAttribute("type").toString();
 //System.out.println(type);
 Student st=null;
-if(type.equals("SUPPLEMENTARY"))
+if(type.equals("SUPPLEMENTARY")){
+	System.out.println("going to subjectdb");
 	st=new StudentDB().getSubjectsForRegistration(regdno,sem,"SUPPLEMENTARY");
+}
 else if(type.equals("REVALUATION"))
 	st=new StudentDB().getSubjectsForRegistration(regdno,sem,"REVALUATION");
 else if(type.equals("SUPPLY REVALUATION"))
@@ -35,7 +37,7 @@ else if(type.equals("SPECIAL THEORY"))
 
 if(st==null)
 {
-	session.setAttribute("error", "Regd.no is not found for the selected examination type");
+	session.setAttribute("error", "Regd.no is not found (or) already registered for the selected examination type");
 	response.sendRedirect("./errors.jsp");
 }
 	
@@ -70,7 +72,7 @@ else if(ur.getStatus().equals("office"))
 
 <html>
 <head>
-<title>SVCP--Examination Fee Portal</title>
+<title>SHCP--Examination Fee Portal</title>
 
 </head>
 <body>

@@ -216,6 +216,7 @@ function subjectselect(elecat)
 								<td WIDTH="10%" ALIGN="left">
 								<select name="cat" id="cat" onChange="toggle(this);">
 								<option value=""></option>
+								<option value="all">All</option>
 								<option value="common">Common</option>
 								<option value="elective">Elective</option>
 								<option value="au">Audit Course</option>

@@ -155,7 +155,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 <ul>
 
 	<li> <a href="./midStep1f.jsp"> Mid Marks</a></li>
-	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
+	<!--  <li> <a href="./labstep1f.jsp"> Lab Marks</a></li>-->
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> 
 	<li> <a href="./attendance1f.jsp"> Attendance</a></li>
 	<li> <a href="./acaactmarks1f.jsp"> Academic Activities</a></li>

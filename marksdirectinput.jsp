@@ -332,7 +332,7 @@ for(int i=0;i<mapids.size();i++)
 	else
 	{
 			
-				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+"></input>";
+				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-dm"+midno+"></input>";
 				
 				
 		 atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=false></input>";

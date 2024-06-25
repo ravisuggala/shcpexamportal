@@ -33,7 +33,7 @@ String degree=session.getValue("degree").toString();
 ArrayList subjects=new ArrayList();
 MidExamDB medb=new MidExamDB();
 LinkedHashMap marksdata=new LinkedHashMap();
-if(!midno.equals("final")){
+if(!midno.equals("direct")){
 	 subjects=new SubjectDB().getAllMappedSubjectsInOrderNoLabs(degree,branch, sem, reg, section, ay);
 	marksdata=medb.getAllMidMarks(degree,ay, branch, reg, sem,  midno,section);
 }
@@ -46,7 +46,7 @@ else
 	 
 session.putValue("marksdata", marksdata);
  
-if(!midno.equals("final"))
+if(!midno.equals("direct"))
  title=new StudentDB().getYearDescription(sem,degree)+" Mid-"+miscUtil.getMidinFull(midno)+" Examination";
 else
 	title=new StudentDB().getYearDescription(sem,degree)+" Mid Examinations";

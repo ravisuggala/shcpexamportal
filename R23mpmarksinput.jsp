@@ -138,19 +138,23 @@ function validateMarks(field)
 
 function formsubmit()
 {
-    var form1 = document.forms['REGISTER'];
-    var flag=0;
-    //formName being the name of the form
-    for (i = 0; i < form1 .length; i++) {
-    inp= form1 .elements[i];
-    if (inp.value.length == 0){
-    	flag=1;
-    alert("Please enter marks in all text boxes");
-    break;
+	var inputs = document.querySelectorAll('input[type="text"]');
+    var isValid = true;
+
+    inputs.forEach(function(input) {
+        if (!input.value.trim().match(/^\d+$/)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        alert("Please enter numbers in all text boxes.");
+    } else {
+    	document.forms['REGISTER'].submit();
     }
-    }
-    if(flag==0)
-	document.forms['REGISTER'].submit();
+    
+    
+    
 }
 
 </script>

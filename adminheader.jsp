@@ -207,7 +207,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<li> <a href="./attendance1.jsp">Attended Classes</a></li>
 				<li> <a href="./acaactmarks1.jsp">Academic Activity Marks</a></li>
 				<li> <a href="./assmarks1.jsp">Assignment Marks</a></li>-->
-				<li> <a href="./LabStep1.jsp">Lab Marks</a></li>
+				<!--  <li> <a href="./LabStep1.jsp">Lab Marks</a></li>-->
 				<li> <a href="./ps3Step1.jsp">Practice School-III Marks</a></li>
 				<li><a href="./freezmarksparams.jsp" > Freez Marks</a>
 				
@@ -220,6 +220,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 <ul>
 
 	<li> <a href="./midStep1.jsp"> Mid Marks</a></li>
+	<li> <a href="./auditcrsMarksStep1.jsp">Audit Course Marks</a></li>
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> -->
 	<!--  <li> <a href="./attendance1f.jsp"> Attendance</a></li>
 	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>-->
@@ -520,6 +521,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 	
 		<li> <a href="#"> University Sheets</a>
 			<ul>
+				<li> <a href="./jntutsheetparam1.jsp">T-Sheet</a></li>
 				<li> <a href="#">For PCs</a>
 				<ul>
 						<li> <a href="./jntuugparam1.jsp">UG</a></li>
@@ -528,6 +530,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				</li>
 				<li> <a href="./jntuexamsparam1.jsp">For Exams</a></li>
 				<li> <a href="./nadsheetparam1.jsp">NAD Sheet</a></li>
+				
 				
 			</ul>
 		
@@ -560,7 +563,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 	
 	<ul>
 				<li> <a href="./regularstpayments.jsp">Regular</a></li>
-				<li> <a href="./downloadsupplyfeesheet1.jsp">Supplementary</a></li>
+				<li> <a href="./registration1.jsp?type=SUPPLEMENTARY">Supplementary</a></li>
 				<li> <a href="./downloadrevfeesheet1.jsp">Revaluation</a></li>
 				<li> <a href="./downloadsrvfeesheet1.jsp">Supply Revaluation</a></li>
 				<li> <a href="./downloadstfeesheet1.jsp">Special Theory</a></li>
