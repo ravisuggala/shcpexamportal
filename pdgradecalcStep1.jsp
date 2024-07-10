@@ -26,7 +26,7 @@ ArrayList regs=new StudentDB().getRegulations();
 
 <html>
 	<head>
-		<title>SVCP--Examination Portal - External Examinations</title>
+		<title>SHCP--Examination Portal - External Examinations</title>
 
 <script>
 function populateSecValues(obj){

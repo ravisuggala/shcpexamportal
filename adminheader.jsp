@@ -232,11 +232,11 @@ User usr=(User)session.getAttribute("LoginRecord");
 <li> <a href="#" > Pharm.D</a>
 <ul>
 
-	<li> <a href="./midStep1f.jsp"> Mid Marks</a></li>
+	<li> <a href="./midStep1.jsp"> Mid Marks</a></li>
 	<!-- <li><a href="./internalStep1f.jsp">Internal Evaluation Marks</a> -->
-	<li> <a href="./attendance1f.jsp"> Attendance</a></li>
-	<li> <a href="./internalStep1f.jsp"> Assessment Marks</a></li>
-	<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>
+	<!--<li> <a href="./attendance1f.jsp"> Attendance</a></li>-->
+	<!--<li> <a href="./internalStep1f.jsp"> Assessment Marks</a></li>-->
+	<!--<li> <a href="./labstep1f.jsp"> Lab Marks</a></li>-->
 	
 	
 	
@@ -322,7 +322,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<li> <a href="#">Marks Entry</a>
 				<ul>
 					<li> <a href="./pdregexternalStep1.jsp">Theory</a></li>
-					<li> <a href="./pdreglabStep1.jsp">Lab</a></li>
+					<!--  <li> <a href="./pdreglabStep1.jsp">Lab</a></li>-->
 				</ul>
 			   </li>
 			   <li> <a href="pdgradecalcStep1.jsp">Freez Marks</a></li>

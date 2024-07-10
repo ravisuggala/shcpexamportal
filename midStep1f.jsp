@@ -29,7 +29,7 @@ ArrayList regs=new StudentDB().getRegulations();
 
 <html>
 	<head>
-		<title>SVCP--Examination Portal - Mid Examinations</title>
+		<title>SHCP--Examination Portal - Mid Examinations</title>
 
 <script>
 function toggle(selectObj) {
