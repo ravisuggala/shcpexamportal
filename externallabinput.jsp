@@ -122,7 +122,7 @@ ArrayList marksrows=new ArrayList();
 String status="";
 String title="";
 String subject=new String();
-
+String maxmarks=miscUtil.getFromSession(request, response,"maxmarks");
 String examname="";
 if (session.getAttribute("marksinput")!=null)
 {
@@ -209,7 +209,7 @@ for(int i=0;i<mapids.size();i++)
 						<TABLE BORDER="1" CELLPADDING="2" CELLSPACING="2" WIDTH="300">
 							<FORM NAME = REGISTER METHOD = POST ACTION = "./ActionServlet" >
 							
-							
+							<input type=hidden id="maxmarks" value='<%=maxmarks %>'></input>
 							<TR>
 							    <TD COLSPAN="6" ALIGN="center"><h6><b> <%=title %></b></h6></TD>
 							</TR>
@@ -217,7 +217,7 @@ for(int i=0;i<mapids.size();i++)
 							<th><font size=1>Sl.No</font>
 							<th nowrap><font size=1>Name of the Student</font>
 							<th><font size=1>Regd.No</font>
-							<th><font size=1>Lab Marks(35)</font>
+							<th><font size=1>Lab Marks(<%=maxmarks %>)</font>
 							
 							
 							<%
