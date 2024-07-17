@@ -4,66 +4,120 @@
 <script type="text/javascript" src="./JS/jquery-1.4.2.min.js">  </script>
 
 <script type="text/javascript">
-        $(function() {
-            $('input:text:first').focus();
+$(function() {
+    $('input:text:first').focus();
+    
+    var $inp = $('input:text');
+    
+    $inp.bind('keydown', function(e) {
+    	 //var key = (e.keyCode ? e.keyCode : e.charCode);
+        var key = e.which;
+        if (key === 9) {
+            e.preventDefault();
+            $(this).focus();
+        }
+        if (key == 13) {
+        	if(!validateMarks(this))
+        	
+             {
+            e.preventDefault();
+            var nxtIdx = $inp.index(this) + 1;
+            $(":input:text:eq(" + nxtIdx + ")").select();
+            $(":input:text:eq(" + nxtIdx + ")").focus();
             
-            var $inp = $('input:text');
-            
-            $inp.bind('keydown', function(e) {
-                //var key = (e.keyCode ? e.keyCode : e.charCode);
-                var key = e.which;
-                if (key == 13) {
-                	if(!validateMarks(this))
-                	
-                     {
-                    e.preventDefault();
-                    var nxtIdx = $inp.index(this) + 1;
-                    $(":input:text:eq(" + nxtIdx + ")").focus();
-                    }
-                }
-            });
-        });
-        
-        
-        
-        
-        
-            </script>
+            }
+        	else{
+        		e.preventDefault();
+        		var currentTextboxValue = $(this).val();
+        		$(this).select();
+        	}
+        }
+    });
+});
 
-   
+
+
+
+
+    </script>
+
+
 <script language="javascript">
+function generateRegex(maxMarks) {
+// Build the regex pattern dynamically
+var regexPattern = '^(a|A';
 
+// Allow any digit from 0 to the maximum marks
+
+
+// Allow double-digit numbers less than or equal to the maximum marks
+for (var i = 0; i <= maxMarks; i += 1) {
+regexPattern += '|' + i.toString();
+}
+
+// Close the regex pattern
+regexPattern += ')$';
+
+// Create a RegExp object with the generated pattern
+const regex = new RegExp(regexPattern);
+
+return regex;
+}
 function validateMarks(field) 
 {
-	var i;
-	 if(!checkString(field,"\" Student Marks \"",false)) 
-            return true;
-	 
-	 
-	 var value=field.value;
-	 
-	 var id=field.id;
-	 var id1=id.substr(0,2);
-	 
-	 var patt1 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-5])$");
-	 
-	 var patt2 = new RegExp("^(a|A|[0-9]|1[0-9]|20)$");
-	 var patt4 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|40)$");
-	 
-	 if(id1=="dm")
-	 	res = patt1.test(value);
-	 if(!res)
-		 {
-		   alert("Invalid Marks");
-		   return true;
-		 }
-	    
-    
-	 return false;
-	 
+var i;
+if(!checkString(field,"\" Student Marks \"",false)) 
+    return true;
 
-   //  document.forms['REGISTER'].submit();
-	
+
+var value=field.value;
+
+var id=field.id;
+var id1=id.substr(0,2);
+
+var patt1 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|70)$");
+
+var patt2 = new RegExp("^(a|A|[0-9]|1[0-9]|20)$");
+var patt4 = new RegExp("^(a|A|[0-9]|1[0-9]|2[0-9]|3[0-9]|40)$");
+
+var max=document.getElementById('maxmarks').value;
+
+if(id1=="dm")
+{
+// var regex = /^(\d+(\.\d{1,2})?|[Aa])$/;
+ var regex = generateRegex(max);
+ if (regex.test(value)) {
+ 	//res=asspatt.test(value);
+ 	if(value.toUpperCase()=="A") res=true;
+ 	else
+ 		{
+ 		var floatValue = parseInt(value);
+	 	if (floatValue <= max) {
+	 		res=true;
+	 	}
+	 	else
+	 		res=false;
+ 		}
+ 	
+ }
+ else
+	 res=false;
+ 	
+	 
+}
+
+if(!res)
+ {
+   alert("Invalid Marks");
+   return true;
+ }
+
+
+return false;
+
+
+//  document.forms['REGISTER'].submit();
+
 }
 
 function formsubmit()
