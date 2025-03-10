@@ -283,9 +283,7 @@ if (session.getAttribute("marksinput")!=null)
 	 
 	
 	 out.println("<center><h6>"+status+"</h6></center>");
-		%>
-		 <jsp:include page='./storemarksstatus.jsp' flush="true" />
-	    <% 
+		
 	 
 		 
 	 
@@ -327,12 +325,14 @@ for(int i=0;i<mapids.size();i++)
 			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value=-1></input>";
 		else
 		{
-			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
+			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-dm"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
 			attbox="<input id=at"+i+" type=text size=5 maxlength=5 name="+mapid+"-att value="+attempted.getValue(attempted.getAttno()) +"></input>";
 			actvtsbox="<input id=ac"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts value="+attempted.getValue(attempted.getActvtsno())+"></input>";
 			assbox="<input id=as"+i+" type=text size=5 maxlength=5 name="+mapid+"-asst value="+attempted.getValue(attempted.getAsstno()) +"></input>";
 		}
 			
+		
+		 
 		atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=true></input>";
 			 
 	}
@@ -341,7 +341,7 @@ for(int i=0;i<mapids.size();i++)
 			if(midno.equals("remid")) 
 				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+" value='-1'></input>";
 			else{
-				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+"></input>";
+				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-dm"+midno+"></input>";
 				attbox="<input id=at"+i+" type=text size=5 maxlength=5 name="+mapid+"-att></input>";
 				actvtsbox="<input id=ac"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts></input>";
 				assbox="<input id=as"+i+" type=text size=5 maxlength=5 name="+mapid+"-asst></input>";

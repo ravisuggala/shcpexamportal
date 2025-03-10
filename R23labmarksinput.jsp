@@ -330,7 +330,7 @@ for(int i=0;i<mapids.size();i++)
 			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-dm"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
 			 qmbox="<input id=qm"+i+" type=text size=3 maxlength=5 name="+mapid+"-qm"+midno+" value="+attempted.getValue(attempted.getAttno())+" ></input>";
 			 ambox="<input id=am"+i+" type=text maxlength=5 size=3 name="+mapid+"-am"+midno+" value="+attempted.getValue(attempted.getActvtsno()) +" ></input>";
-			assbox="<input id=as"+i+" type=text size=5 maxlength=5 name="+mapid+"-as value="+attempted.getValue(attempted.getAsstno())+"></input>";
+			assbox="<input id=as"+i+" type=text size=5 maxlength=5 name="+mapid+"-as"+midno+" value="+attempted.getValue(attempted.getAsstno())+"></input>";
 		}
 			
 		atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=true></input>";
@@ -422,7 +422,7 @@ for(int i=0;i<mapids.size();i++)
 							<tr>
 							<TD colspan=7 align="center">
 							
-							<INPUT TYPE=HIDDEN NAME="option" VALUE = "midmarks">
+							<INPUT TYPE=HIDDEN NAME="option" VALUE = "r23labmarksinput">
 							<input id="btnSubmit" type="button" value="Submit" onclick="formsubmit()"></input></TD>
 							
 													</FORM>

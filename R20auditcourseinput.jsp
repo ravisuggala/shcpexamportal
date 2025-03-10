@@ -6,29 +6,34 @@
 <script type="text/javascript">
 $(function() {
     $('input:text:first').focus();
+    
     var $inp = $('input:text');
+    
+    // Automatically select the text when a textbox gains focus
+    $inp.focus(function() {
+        $(this).select();
+    });
+
     $inp.bind('keydown', function(e) {
-        //var key = (e.keyCode ? e.keyCode : e.charCode);
         var key = e.which;
+        
+        // On 'Tab' key press
         if (key === 9) {
             e.preventDefault();
             $(this).focus();
         }
+        
+        // On 'Enter' key press
         if (key == 13) {
-        	if(!validateMarks(this))
-        	
-             {
             e.preventDefault();
-            var nxtIdx = $inp.index(this) + 1;
-            $(":input:text:eq(" + nxtIdx + ")").select();
-            $(":input:text:eq(" + nxtIdx + ")").focus();
             
+            if (!validateMarks(this)) {
+                var nxtIdx = $inp.index(this) + 1;
+                $(":input:text:eq(" + nxtIdx + ")").select().focus();
+            } else {
+                // Select the entire text in the current textbox
+                $(this).select();
             }
-        	else{
-        		e.preventDefault();
-        		var currentTextboxValue = $(this).val();
-        		$(this).select();
-        	}
         }
     });
 });

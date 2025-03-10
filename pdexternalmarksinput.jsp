@@ -178,6 +178,7 @@ String title="";
 String subject=new String();
 String maxmarks=miscUtil.getFromSession(request, response,"maxmarks");
 String examname="";
+
 if (session.getAttribute("marksinput")!=null)
 {
      status=(String)session.getAttribute("marksinput");
@@ -263,7 +264,7 @@ for(int i=0;i<mapids.size();i++)
 						<TABLE BORDER="1" CELLPADDING="2" CELLSPACING="2" WIDTH="300">
 							<FORM NAME = REGISTER METHOD = POST ACTION = "./ActionServlet" >
 							
-							
+							<input type=hidden id="maxmarks" value='<%=maxmarks %>'></input>
 							<TR>
 							    <TD COLSPAN="4" ALIGN="center"><h6><b> <%=title %></b></h6></TD>
 							</TR>

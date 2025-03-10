@@ -119,6 +119,7 @@ else if(ur.getStatus().equals("ACE"))
 								<option></option>
 									<option value="ODD">ODD Semester</option>
 									 <option value="EVEN">EVEN Semester</option>
+									 <option value="YEAR">Year</option>
 									 
 								</select> 
         						</td>

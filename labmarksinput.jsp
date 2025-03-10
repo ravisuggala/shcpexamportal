@@ -327,7 +327,7 @@ for(int i=0;i<mapids.size();i++)
 			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value=-1></input>";
 		else
 		{
-			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
+			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-dm"+midno+" value="+attempted.getValue(attempted.getDmno())+"></input>";
 			attbox="<input id=at"+i+" type=text size=5 maxlength=5 name="+mapid+"-att value="+attempted.getValue(attempted.getAttno()) +"></input>";
 			actvtsbox="<input id=ac"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts value="+attempted.getValue(attempted.getActvtsno())+"></input>";
 			assbox="<input id=as"+i+" type=hidden size=5 maxlength=5 name="+mapid+"-asst value=0></input>";
@@ -339,9 +339,9 @@ for(int i=0;i<mapids.size();i++)
 	else
 	{
 			if(midno.equals("remid")) 
-				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+" value='-1'></input>";
+				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-dm"+midno+" value='-1'></input>";
 			else{
-				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-"+midno+"></input>";
+				dmbox="<input id=dm"+i+"  type=text maxlength=5 size=3 name="+mapid+"-dm"+midno+"></input>";
 				attbox="<input id=attd"+i+" type=text size=5 maxlength=5 name="+mapid+"-att></input>";
 				actvtsbox="<input id=actvts"+i+" type=text size=5 maxlength=5 name="+mapid+"-actvts></input>";
 				assbox="<input id=asst"+i+" type=hidden size=5 value=0 maxlength=5 name="+mapid+"-asst></input>";

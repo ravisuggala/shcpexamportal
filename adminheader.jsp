@@ -145,6 +145,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 		<li> <a href="#" onClick=selectOption('mapelective')> Elective Subjects</a></li>
 		<li> <a href="./bp8mapelective1.jsp" > VIII Sem Elective Subjects</a></li>
 		<li> <a href="./importmappings1.jsp"> Upload Mapping Sheet</a></li>
+		<li> <a href="./importncmappings1.jsp"> Upload Audit Subjects Mapping</a></li>
 		</ul>
 	</li>
 	<li> <a href="#" > Faculty Mapping</a>
@@ -261,16 +262,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 			</ul>	
 	</li>
 		<li><a href="./examcreation.jsp" >Exam Creation</a></li>
-		<!--  <li><a href="#">Student Registration</a>
-			<ul>
-				<li> <a href="./examregistration1.jsp">Regular</a></li>
-				<li> <a href="./revregistration1.jsp">Revaluation</a></li>
-				<li> <a href="./supplyregistration1.jsp">Supplementary</a></li>
-	
-				
-			</ul>
-			</li> -->
-		<li><a href="#">Exam TimeTable</a>
+		 <li><a href="#">Exam TimeTable</a>
 		<ul>
 				<li> <a href="./examtimetableparams1.jsp">General</a></li>
 	
@@ -285,7 +277,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<ul>
 				<li> <a href="#">Marks Entry</a>
 				<ul>
-					<li> <a href="./externalmarksparam1.jsp">Upload Marks</a></li>
+					<!--  <li> <a href="./externalmarksparam1.jsp">Upload Marks</a></li>-->
 					<li> <a href="./regexternalStep1.jsp">Theory</a></li>
 					<li> <a href="./reglabStep1.jsp">Lab</a></li>
 					<li> <a href="./regps3Step1.jsp">Practice School-III</a></li>
@@ -300,33 +292,33 @@ User usr=(User)session.getAttribute("LoginRecord");
 				<ul>
 				<li> <a href="#">Marks Entry</a>
 				<ul>
-				<li> <a href="./externalmarksparam1.jsp">Upload Marks</a></li>
+					<!--  <li> <a href="./externalmarksparam1.jsp">Upload Marks</a></li>-->
 					<li> <a href="./mpexternalStep1.jsp">Theory</a></li>
 					<!-- <li> <a href="./mpexternallabStep1.jsp">Lab</a></li> -->
 					<li> <a href="./mpseminarStep1.jsp">Seminar/Colloquium</a></li>
 					<li> <a href="./mpvivaStep1.jsp">Viva Marks</a></li>
-					<li> <a href="./mp50marksStep1.jsp">50 Marks Input</a></li>
+					<!--  <li> <a href="./mp50marksStep1.jsp">50 Marks Input</a></li>
 					<li> <a href="./mp200marksStep1.jsp">200 Marks Input</a></li>
 					<li> <a href="./mp275marksStep1.jsp">275 Marks Input</a></li>
-					<li> <a href="./mpccaStep1.jsp">Co-curricular Activity Credits</a></li>
+					<li> <a href="./mpccaStep1.jsp">Co-curricular Activity Credits</a></li>-->
 					
 					
 				</ul>
 			   </li>
 			   <li> <a href="mpgradecalcStep1.jsp">Grade Calculation</a></li>
-			   <li> <a href="mpgraftgradesStep1.jsp">Grafting Grades</a></li>
+			  <!--   <li> <a href="mpgraftgradesStep1.jsp">Grafting Grades</a></li>-->
 		     </ul>
 		 </li>
 		 <li><a href="#">Pharm.D</a>
 				<ul>
 				<li> <a href="#">Marks Entry</a>
 				<ul>
-					<li> <a href="./pdregexternalStep1.jsp">Theory</a></li>
+					<li> <a href="./pdregexternalStep1.jsp">Theory/Lab</a></li>
 					<!--  <li> <a href="./pdreglabStep1.jsp">Lab</a></li>-->
 				</ul>
 			   </li>
 			   <li> <a href="pdgradecalcStep1.jsp">Freez Marks</a></li>
-			   <li> <a href="pdgraftgradesStep1.jsp">Grafting Grades</a></li>
+			   <!--  <li> <a href="pdgraftgradesStep1.jsp">Grafting Grades</a></li>-->
 		     </ul>
 		 </li>
 				
@@ -475,7 +467,7 @@ User usr=(User)session.getAttribute("LoginRecord");
 			
 			<ul>
 				<li> <a href="./exammarksmemoparam1.jsp">Examination Wise</a></li>
-				<li> <a href="./marksmemoparam1.jsp">Batch Wise</a></li>
+				<li> <a href="./marksmemoparam1.jsp">Batch Wise/Regular</a></li>
 				
 			</ul>
 		    </li>
@@ -564,8 +556,8 @@ User usr=(User)session.getAttribute("LoginRecord");
 	<ul>
 				<li> <a href="./regularstpayments.jsp">Regular</a></li>
 				<li> <a href="./registration1.jsp?type=SUPPLEMENTARY">Supplementary</a></li>
-				<li> <a href="./downloadrevfeesheet1.jsp">Revaluation</a></li>
-				<li> <a href="./downloadsrvfeesheet1.jsp">Supply Revaluation</a></li>
+				<li> <a href="./registration1.jsp?type=REVALUATION">Revaluation</a></li>
+				<li> <a href="./registration1.jsp?type=SRV">Supply Revaluation</a></li>
 				<li> <a href="./downloadstfeesheet1.jsp">Special Theory</a></li>
 				
 	</ul>

@@ -25,7 +25,7 @@ String type=session.getAttribute("type").toString();
 //System.out.println(type);
 Student st=null;
 if(type.equals("SUPPLEMENTARY")){
-	System.out.println("going to subjectdb");
+	//System.out.println("going to subjectdb");
 	st=new StudentDB().getSubjectsForRegistration(regdno,sem,"SUPPLEMENTARY");
 }
 else if(type.equals("REVALUATION"))

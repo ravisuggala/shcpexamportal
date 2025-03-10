@@ -52,7 +52,12 @@ function populateSecValues(obj){
 			});
 
 	}
-
+function confirmSubmission() {
+    // Display confirmation message
+    var userResponse = confirm("Are you sure you want to grafting Grades?");
+    // Return true if the user clicks "OK", false if "Cancel"
+    return userResponse;
+}
 
 </script>
 		
@@ -160,7 +165,7 @@ function populateSecValues(obj){
 							
 							<TR>
 							    <TD colspan=2 align="center">
-							    <INPUT TYPE="SUBMIT" NAME="Next" VALUE="..Next-->"></INPUT></TD>
+							    <INPUT TYPE="SUBMIT" NAME="Next" VALUE="..Next-->" onclick="return confirmSubmission();"></INPUT></TD>
 
 							</TR>
 							</FORM>

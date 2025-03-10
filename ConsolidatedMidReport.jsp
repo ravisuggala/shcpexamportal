@@ -48,9 +48,14 @@ if(midno.equals("mid1")||midno.equals("mid2")||midno.equals("remid")||midno.equa
 	marksdata=medb.getAllMidMarks(degree,ay, branch, reg, sem,  midno,section);
 }
 	// marksdata=medb.getElectiveMidMarks(ay, branch, reg, sem,  midno,section);
-else if(midno.equals("total")){
+else if(midno.equals("total")&&!degree.equals("Pharm.D")){
 	 subjects=new SubjectDB().getAllMappedSubjectsInOrder(degree,branch, sem, reg, section, ay);
 	marksdata=medb.getAllMidFinalMarks(degree,ay, branch, reg, sem,  midno,section);
+}
+else if(midno.equals("total")&&degree.equals("Pharm.D")){
+	System.out.println("in jsp");
+	 subjects=new SubjectDB().getAllMappedSubjectsInOrder(degree,branch, sem, reg, section, ay);
+	marksdata=medb.getFinalInternalMarks(ay, branch, reg,  sem, midno,section,subjects);
 }
 	
 //else if(midno.equals("labfinal"))

@@ -73,8 +73,13 @@ else if(cat.equals("all"))
 {
 	response.sendRedirect("./allfinalmarks.jsp");
 }
-else
+else if(!reg.equals("R23"))
 	response.sendRedirect("./displaygrandmidmarks.jsp");
+else if(reg.equals("R23")&&!subject.endsWith("P"))
+	response.sendRedirect("./displayR23grandmidmarks.jsp");
+
+else if(reg.equals("R23")&&subject.endsWith("P"))
+	response.sendRedirect("./displayR23labmarks.jsp");
 
 
 %>

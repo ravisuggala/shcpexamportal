@@ -282,10 +282,7 @@ if (session.getAttribute("marksinput")!=null)
 	 
 	
 	 out.println("<center><h6>"+status+"</h6></center>");
-		%>
-		 <jsp:include page='./storemarksstatus.jsp' flush="true" />
-	    <% 
-	 
+		
 		 
 	 
 
@@ -323,7 +320,7 @@ for(int i=0;i<mapids.size();i++)
 	if(attempted.isMidExisted())
 	{
 		
-			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-"+midno+" value="+attempted.getDm()+"></input>";
+			dmbox="<input id=dm"+i+" type=text size=3 maxlength=5 name="+mapid+"-dm"+midno+" value="+attempted.getDm()+"></input>";
 		
 			
 		atbox="<input type=hidden size=3 name=h"+mapid+"-"+midno+" value=true></input>";
